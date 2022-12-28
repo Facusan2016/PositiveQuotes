@@ -1,3 +1,5 @@
+import axios from "axios";
+
 export const postQuote = async({name, quote}) =>{
 
     const info = {
@@ -8,11 +10,13 @@ export const postQuote = async({name, quote}) =>{
     const direction = `http://localhost:4001/api/save-quote`
     
     try {
-        console.log(info);
-        await fetch(direction,{ method: 'POST', headers:{'Content-Type': 'application/json'}, body: JSON.stringify(info)});
-        console.log('Realizado con éxito')
+
+        const resp = await axios.post(direction,info);
+        console.log(resp);
+
     } catch (error) {
-        console.log(error);
+        console.log(error.response.data)
+        return error.response.data.errors;
     }
 
 }

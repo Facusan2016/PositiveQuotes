@@ -1,5 +1,6 @@
 import { useForm } from "../hooks/useForm"
 import { postQuote } from "../helpers/postQuote";
+import { useState } from "react";
 
 const datos = {
   name : '',
@@ -9,13 +10,15 @@ const datos = {
 export const AddQuote = () => {
   
   const {formState, name, quote, onInputChange, onResetForm} = useForm(datos);
-  const onSubmit = (e) =>{
+  const [error, setError] = useState({})
+
+  const onSubmit = async(e) =>{
     e.preventDefault();
-    postQuote(formState);
+    const errores = await postQuote(formState);
+    setError(errores);
     onResetForm();
   }
-
-
+  
   return (
     <form onSubmit={ onSubmit }>
       
