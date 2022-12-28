@@ -1,10 +1,11 @@
 import React from 'react'
 
-export const IndividualQuote = ({quote, name}) => {
+export const IndividualQuote = ({date, quote, name}) => {
   return (
-    <div>
-        <h1>{quote}</h1>
-        <h2>{name}</h2>
+    <div className='quote'>
+        <div className='quoteName'>{name}</div>
+        <div className='quoteBody'>"{quote}"</div>
+        <div className='quoteDate'>{date}</div>
     </div>
   )
 }

@@ -1,6 +1,5 @@
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux'
-import { getQuotes } from '../../helpers/getQuotes'
 import { startLoadingNotes } from '../../store/quotes/thunks';
 import { IndividualQuote } from './IndividualQuote';
 
@@ -16,7 +15,7 @@ export const Quotes = () => {
   }, [])
   
   return (
-    <div>
+    <div className='quoteDiv'>
       {
         Allquotes.map(quote => (<IndividualQuote key={quote._id}{...quote}/> ))
       }

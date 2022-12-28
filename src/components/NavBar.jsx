@@ -8,8 +8,8 @@ export const NavBar = () => {
             Positive Quotes.
         </div>
         <nav>
-            <Link className='link' to="/">Ver Notas</Link>
-            <Link className='link' to="addQuote">Agregar Nota</Link>
+            <Link className='link grow' to="/">Quotes</Link>
+            <Link className='link grow' to="addQuote">Add quote</Link>
         </nav>
     </div>
   )
