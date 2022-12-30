@@ -7,7 +7,7 @@ export const postQuote = async({name, quote}) =>{
         quote : quote
     }
 
-    const direction = `http://localhost:4001/api/save-quote`
+    const direction = `https://positivequotesbackend-production.up.railway.app/api/save-quote`
     
     try {
 

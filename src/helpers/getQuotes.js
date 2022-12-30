@@ -2,7 +2,7 @@ import axios from "axios";
 
 export const getQuotes = async() =>{
 
-    const direction = `http://localhost:4001/api/select-all-quotes`
+    const direction = "https://positivequotesbackend-production.up.railway.app/api/select-all-quotes"
     try {
 
         const response = await axios.get(direction);
