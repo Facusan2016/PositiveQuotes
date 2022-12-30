@@ -8,16 +8,18 @@ export const Quotes = () => {
   const { Allquotes } = useSelector(state => state.quotes)
   const dispatch = useDispatch();
 
-  console.log(Allquotes);
-
   useEffect(() => {
     dispatch(startLoadingNotes());
   }, [])
+
+  console.log(Allquotes)
   
   return (
     <div className='quoteDiv'>
       {
-        Allquotes.map(quote => (<IndividualQuote key={quote._id}{...quote}/> ))
+
+        Allquotes.length != 0 ? Allquotes.map(quote => (<IndividualQuote key={quote._id}{...quote}/> )) : <div className='noQuotes'>There are no quotes, write the first one. ;)</div>
+
       }
     </div>
   )

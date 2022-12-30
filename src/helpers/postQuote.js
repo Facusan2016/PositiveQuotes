@@ -12,11 +12,11 @@ export const postQuote = async({name, quote}) =>{
     try {
 
         const resp = await axios.post(direction,info);
-        console.log(resp);
+        return resp.data;
 
     } catch (error) {
-        console.log(error.response.data)
-        return error.response.data.errors;
+
+        return error.response.data;
     }
 
 }
