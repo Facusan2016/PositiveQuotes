@@ -1,9 +1,11 @@
 import { useEffect, useMemo, useState } from 'react';
 
+//Este Hook personalizado fue extraído de Internet
+
 export const useForm = ( initialForm = {}, formValidations = {}) => {
   
-    const [ formState, setFormState ] = useState( initialForm );
-    const [ formValidation, setFormValidation ] = useState({});
+    const [ formState, setFormState ] = useState( initialForm ); // Uso un state para setear el estado inicial del formulario
+    const [ formValidation, setFormValidation ] = useState({}); // En este caso no usé las validaciones
 
     useEffect(() => {
         createValidators();
@@ -11,7 +13,7 @@ export const useForm = ( initialForm = {}, formValidations = {}) => {
 
     useEffect(() => {
       
-        setFormState( initialForm );
+        setFormState( initialForm ); //Actualizamos el InitialForm cada vez que este mismo cambie
 
     }, [initialForm])
 
@@ -30,14 +32,14 @@ export const useForm = ( initialForm = {}, formValidations = {}) => {
 
     const onInputChange = ({ target }) => {
         const { name, value } = target;
-        setFormState({
+        setFormState({  //Cada vez que cambia la entrada, el FormState se actualiza con los valores correspondientes
             ...formState,
             [ name ]: value
         });
     }
 
     const onResetForm = () => {
-        setFormState( initialForm );
+        setFormState( initialForm ); //Se vuelve el formulario a su estado inicial
     }
 
     const createValidators = () => {
@@ -54,6 +56,7 @@ export const useForm = ( initialForm = {}, formValidations = {}) => {
     }
 
 
+    //Exportación de las funciones y variables
 
     return {
         ...formState,

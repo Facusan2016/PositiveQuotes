@@ -11,7 +11,7 @@ export const postQuote = async({name, quote}) =>{
     
     try {
 
-        const resp = await axios.post(direction,info);
+        const resp = await axios.post(direction,info); //Realizo una petición POST usando Axios y enviando parámetros.
         return resp.data;
 
     } catch (error) {

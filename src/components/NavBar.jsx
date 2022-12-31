@@ -1,6 +1,8 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 
+//Barra de navegación usando react-router-dom
+
 export const NavBar = () => {
   return (
     <div id='headerContainer'>
